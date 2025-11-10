@@ -15,12 +15,12 @@ def calculate_bill():
     total = 0
 
     for item in cart:
-        total = total+item["qty"]*item["price"]
+       total += item["qty"]*item["price"]
 
         discount = 0
         if total> 1000:
             discount = total*0.10
-            total = total - discount
+            total -= discount
 
         return total, discount
 
@@ -47,5 +47,6 @@ add_an_item_to_store("oil",150)
 print(add_to_cart("milk",2))
 print(add_to_cart("rice",5))
 print(add_to_cart("oil",1))
+
 
 print_bill ()
